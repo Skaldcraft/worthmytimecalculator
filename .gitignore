@@ -4,3 +4,4 @@ dist/
 pb_data/
 .env
 .env.local
+apps/pocketbase/pocketbase

@@ -1,11 +1,7 @@
 import Pocketbase from 'pocketbase';
 
-/**
- * PocketBase Client Configuration
- * Automatically switches between Horizons platform (dev) and your custom production URL.
- */
-const PROD_URL = "https://db.worthmytimecalculator.com"; 
-const DEV_URL = "/hcgi/platform";
+const PROD_URL = "https://db.worthmytimecalculator.com";
+const DEV_URL = "http://127.0.0.1:8090";
 
 const POCKETBASE_API_URL = import.meta.env.PROD ? PROD_URL : DEV_URL;
 
