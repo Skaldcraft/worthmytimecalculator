@@ -1,0 +1,9 @@
+[
+  {
+    "id": "banner-es-1",
+    "img": "/ads/banner-es-1.webp",
+    "url": "https://example.com/afiliado-es",
+    "alt": "Banner de afiliado 1",
+    "active": true
+  }
+]
