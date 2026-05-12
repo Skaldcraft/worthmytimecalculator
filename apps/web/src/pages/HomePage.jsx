@@ -4,7 +4,6 @@ import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import CalculatorSection from '@/components/CalculatorSection.jsx';
 import HistorySection from '@/components/HistorySection.jsx';
-import BannerSection from '@/components/BannerSection.jsx';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { translations } from '@/lib/translations.js';
 
@@ -56,9 +55,6 @@ const HomePage = () => {
 
             {/* Application Sections - ensuring proper spacing and structure */}
             <CalculatorSection onCalculation={handleCalculation} />
-            
-            {/* Banner Section explicitly injected here without conditional wrappers */}
-            <BannerSection />
             
             <HistorySection latestCalculation={latestCalculation} />
           </div>

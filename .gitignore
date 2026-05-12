@@ -1,7 +1,5 @@
 node_modules/
-app.tar.gz
 dist/
-pb_data/
 .env
 .env.local
-apps/pocketbase/pocketbase
+app.tar.gz

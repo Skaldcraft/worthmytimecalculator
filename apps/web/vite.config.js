@@ -5,19 +5,8 @@ import { defineConfig } from 'vite';
 export default defineConfig({
 	plugins: [react()],
 	resolve: {
-		extensions: ['.jsx', '.js', '.tsx', '.ts', '.json'],
 		alias: {
 			'@': path.resolve(__dirname, './src'),
-		},
-	},
-	build: {
-		rollupOptions: {
-			external: [
-				'@babel/parser',
-				'@babel/traverse',
-				'@babel/generator',
-				'@babel/types',
-			],
 		},
 	},
 });
