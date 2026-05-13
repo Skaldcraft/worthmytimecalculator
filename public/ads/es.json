@@ -2,7 +2,7 @@
   {
     "id": 1,
     "type": "video",
-    "url": "/ads/cutco.mp4",
+    "url": "/ads/cutco-es.mp4",
     "link": "https://amzn.to/4njS6AE",
     "alt": "Cuchillos de calidad con garantía de por vida",
     "active": true
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "type": "video",
-    "url": "/ads/le-creuset.mp4",
+    "url": "/ads/le-creuset-es.mp4",
     "link": "https://amzn.to/4wkQAT8",
     "alt": "Utensilios de cocina con garantía de por vida",
     "active": true
