@@ -38,17 +38,31 @@ const BannerItem = ({ banner }) => {
       );
     }
 
-    return (
-      <div className={base}>
-        <video
-          src={banner.url}
-          poster={banner.img || undefined}
-          controls
-          preload="none"
-          className="w-full h-auto"
-          aria-label={banner.alt}
-        />
-      </div>
+    const video = (
+      <video
+        src={banner.url}
+        poster={banner.img || undefined}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="w-full h-auto"
+        aria-label={banner.alt}
+      />
+    );
+
+    return banner.link ? (
+      <a
+        href={banner.link}
+        target="_blank"
+        rel="noopener noreferrer sponsored"
+        className={base}
+      >
+        {video}
+      </a>
+    ) : (
+      <div className={base}>{video}</div>
     );
   }
 
