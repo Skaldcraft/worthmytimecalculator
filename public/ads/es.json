@@ -9,9 +9,12 @@
   },
   {
     "id": 2,
-    "img": "/ads/placeholder-es.webp",
-    "url": "#",
-    "alt": "Anuncio de ejemplo",
-    "active": false
+    "type": "video",
+    "url": "/ads/le-creuset.mp4",
+    "link": "https://amzn.to/4wkQAT8",
+    "alt": "Utensilios de cocina con garantía de por vida",
+    "active": true
   }
 ]
+
+
