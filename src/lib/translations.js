@@ -2,7 +2,7 @@ export const translations = {
   en: {
     metaTitle: "Worth My Time Calculator - Is it worth it?",
     metaDescription: "Convert any item into working hours. Only then you'll know if you really want it.",
-    title: "Worth My Time Calculator?",
+    title: "Worth My Time Calculator",
     subtitle1: "Convert any item into working hours.",
     subtitle2: "Only then you'll know if you really want it.",
     priceLabel: "Item Price",
