@@ -1,9 +1,16 @@
 [
   {
     "id": 1,
-    "img": "/ads/cutco.mp4",
-    "url": "https://amzn.to/4njS6AE",
+    "type": "video",
+    "url": "/ads/cutco.mp4",
     "alt": "Cuchillos de calidad con garantía de por vida",
     "active": true
+  },
+  {
+    "id": 2,
+    "img": "/ads/placeholder-es.webp",
+    "url": "#",
+    "alt": "Anuncio de ejemplo",
+    "active": false
   }
 ]

@@ -1,6 +1,74 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 
+const getYouTubeId = (url) => {
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
+  return match ? match[1] : null;
+};
+
+const getVimeoId = (url) => {
+  const match = url.match(/vimeo\.com\/(\d+)/);
+  return match ? match[1] : null;
+};
+
+const BannerItem = ({ banner }) => {
+  const base =
+    'block w-full max-w-[728px] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300';
+
+  if (banner.type === 'video') {
+    const youtubeId = getYouTubeId(banner.url);
+    const vimeoId = getVimeoId(banner.url);
+
+    if (youtubeId || vimeoId) {
+      const src = youtubeId
+        ? `https://www.youtube.com/embed/${youtubeId}?rel=0`
+        : `https://player.vimeo.com/video/${vimeoId}`;
+
+      return (
+        <div className={`${base} aspect-video`}>
+          <iframe
+            src={src}
+            title={banner.alt}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full border-0"
+            loading="lazy"
+          />
+        </div>
+      );
+    }
+
+    return (
+      <div className={base}>
+        <video
+          src={banner.url}
+          poster={banner.img || undefined}
+          controls
+          preload="none"
+          className="w-full h-auto"
+          aria-label={banner.alt}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <a
+      href={banner.url}
+      target="_blank"
+      rel="noopener noreferrer sponsored"
+      className={base}
+    >
+      <img
+        src={banner.img}
+        alt={banner.alt}
+        className="w-full h-auto"
+        loading="lazy"
+      />
+    </a>
+  );
+};
+
 const BannerSection = () => {
   const { language } = useLanguage();
   const [banners, setBanners] = useState([]);
@@ -32,20 +100,7 @@ const BannerSection = () => {
   return (
     <div className="w-full my-8 flex flex-col items-center gap-6">
       {banners.map((banner) => (
-        <a
-          key={banner.id}
-          href={banner.url}
-          target="_blank"
-          rel="noopener noreferrer sponsored"
-          className="block w-full max-w-[728px] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
-        >
-          <img
-            src={banner.img}
-            alt={banner.alt}
-            className="w-full h-auto"
-            loading="lazy"
-          />
-        </a>
+        <BannerItem key={banner.id} banner={banner} />
       ))}
     </div>
   );

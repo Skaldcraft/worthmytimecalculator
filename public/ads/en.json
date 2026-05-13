@@ -1,9 +1,16 @@
 [
   {
     "id": 1,
-    "img": "/ads/cutco.mp4",
-    "url": "https://amzn.to/4njS6AE",
+    "type": "video",
+    "url": "/ads/cutco.mp4",
     "alt": "Quality knives with a forever guarantee",
     "active": true
+  },
+  {
+    "id": 2,
+    "img": "/ads/placeholder-en.webp",
+    "url": "#",
+    "alt": "Ad placeholder",
+    "active": false
   }
 ]
