@@ -33,14 +33,14 @@ function App() {
           <Route path="/es" element={<HomePage />} />
           
           {/* Spanish Legal Routes */}
-          <Route path="/aviso-legal" element={<LegalNoticePage />} />
-          <Route path="/politica-privacidad" element={<PrivacyPolicyPage />} />
-          <Route path="/politica-cookies" element={<CookiePolicyPage />} />
+          <Route path="/es/aviso-legal" element={<LegalNoticePage />} />
+          <Route path="/es/politica-privacidad" element={<PrivacyPolicyPage />} />
+          <Route path="/es/politica-cookies" element={<CookiePolicyPage />} />
           
           {/* English Legal Routes */}
-          <Route path="/legal-notice" element={<LegalNoticeEnPage />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicyEnPage />} />
-          <Route path="/cookie-policy" element={<CookiePolicyEnPage />} />
+          <Route path="/en/legal-notice" element={<LegalNoticeEnPage />} />
+          <Route path="/en/privacy-policy" element={<PrivacyPolicyEnPage />} />
+          <Route path="/en/cookie-policy" element={<CookiePolicyEnPage />} />
         </Routes>
         <Toaster />
       </Router>

@@ -1,9 +1,9 @@
 [
   {
-    "id": "banner-en-1",
-    "img": "/ads/banner-en-1.webp",
-    "url": "https://example.com/affiliate-en",
-    "alt": "Affiliate banner 1",
+    "id": 1,
+    "img": "/ads/cutco.mp4",
+    "url": "https://amzn.to/4njS6AE",
+    "alt": "Quality knives with a forever guarantee",
     "active": true
   }
 ]

@@ -13,24 +13,24 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
           <p>{t.copyright}</p>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-            <Link 
-              to={language === 'en' ? "/legal-notice" : "/aviso-legal"} 
-              className="hover:text-foreground transition-colors duration-200"
-            >
-              {t.legalNotice}
-            </Link>
-            <Link 
-              to={language === 'en' ? "/privacy-policy" : "/politica-privacidad"} 
-              className="hover:text-foreground transition-colors duration-200"
-            >
-              {t.privacyPolicy}
-            </Link>
-            <Link 
-              to={language === 'en' ? "/cookie-policy" : "/politica-cookies"} 
-              className="hover:text-foreground transition-colors duration-200"
-            >
-              {t.cookiePolicy}
-            </Link>
+              <Link 
+                to={language === 'en' ? "/en/legal-notice" : "/es/aviso-legal"} 
+                className="hover:text-foreground transition-colors duration-200"
+              >
+                {t.legalNotice}
+              </Link>
+              <Link 
+                to={language === 'en' ? "/en/privacy-policy" : "/es/politica-privacidad"} 
+                className="hover:text-foreground transition-colors duration-200"
+              >
+                {t.privacyPolicy}
+              </Link>
+              <Link 
+                to={language === 'en' ? "/en/cookie-policy" : "/es/politica-cookies"} 
+                className="hover:text-foreground transition-colors duration-200"
+              >
+                {t.cookiePolicy}
+              </Link>
           </div>
         </div>
       </div>

@@ -1,9 +1,9 @@
 [
   {
-    "id": "banner-es-1",
-    "img": "/ads/banner-es-1.webp",
-    "url": "https://example.com/afiliado-es",
-    "alt": "Banner de afiliado 1",
+    "id": 1,
+    "img": "/ads/cutco.mp4",
+    "url": "https://amzn.to/4njS6AE",
+    "alt": "Cuchillos de calidad con garantía de por vida",
     "active": true
   }
 ]
