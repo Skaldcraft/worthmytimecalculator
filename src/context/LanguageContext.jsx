@@ -4,6 +4,17 @@ const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguageState] = useState(() => {
+    // Detect language from URL path first
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname;
+      if (path.startsWith('/es')) {
+        return 'es';
+      }
+      if (path.startsWith('/en')) {
+        return 'en';
+      }
+    }
+
     try {
       // Check for persistent user preference
       const storedPreference = localStorage.getItem('userLanguagePreference');

@@ -4,12 +4,112 @@
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Worth My Time Calculator</title>
+		<title>Work Time Cost Calculator – Convert Price Into Hours of Work</title>
+		<meta name="description" content="Simple calculator to convert any price into hours of work. Time price calculator and work time cost converter." />
+		<link rel="canonical" href="https://worthmytimecalculator.com" />
+		<link rel="alternate" hreflang="en" href="https://worthmytimecalculator.com/en" />
+		<link rel="alternate" hreflang="es" href="https://worthmytimecalculator.com/es" />
+		<link rel="alternate" hreflang="x-default" href="https://worthmytimecalculator.com" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://worthmytimecalculator.com" />
+		<meta property="og:title" content="Work Time Cost Calculator – Convert Price Into Hours of Work" />
+		<meta property="og:description" content="Simple calculator to convert any price into hours of work. Time price calculator and work time cost converter." />
+		<meta property="og:image" content="https://worthmytimecalculator.com/og-image.png" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://worthmytimecalculator.com" />
+		<meta property="twitter:title" content="Work Time Cost Calculator – Convert Price Into Hours of Work" />
+		<meta property="twitter:description" content="Simple calculator to convert any price into hours of work. Time price calculator and work time cost converter." />
+		<meta property="twitter:image" content="https://worthmytimecalculator.com/og-image.png" />
+
+		<script>
+			(function() {
+				var path = window.location.pathname;
+				var lang = 'en';
+				var esTitle = 'Calculadora de Tiempo de Trabajo \u2013 \u00BFCu\u00E1ntas horas cuesta X?';
+				var esDesc = 'Convierte cualquier precio en horas de trabajo. Calculadora tiempo de trabajo precio y coste en horas.';
+				if (path.startsWith('/es')) {
+					lang = 'es';
+					document.title = esTitle;
+					document.querySelector('meta[name="description"]')?.setAttribute('content', esDesc);
+					document.querySelector('meta[property="og:title"]')?.setAttribute('content', esTitle);
+					document.querySelector('meta[property="og:description"]')?.setAttribute('content', esDesc);
+					document.querySelector('meta[property="twitter:title"]')?.setAttribute('content', esTitle);
+					document.querySelector('meta[property="twitter:description"]')?.setAttribute('content', esDesc);
+					var h2 = document.querySelector('h2.seo-heading');
+					if (h2) h2.textContent = 'Calculadora para convertir cualquier precio en horas de trabajo.';
+				} else if (path.startsWith('/en') || path === '/') {
+					lang = 'en';
+					var h2 = document.querySelector('h2.seo-heading');
+					if (h2) h2.textContent = 'Convert any price into hours of work with this time price calculator.';
+				}
+				document.documentElement.lang = lang;
+			})();
+		</script>
+
+		<script type="application/ld+json">
+		[
+			{
+				"@context": "https://schema.org",
+				"@type": "WebApplication",
+				"name": "Worth My Time Calculator",
+				"url": "https://worthmytimecalculator.com/",
+				"description": "A simple tool to convert any price into hours of work. Time price calculator, work time cost calculator.",
+				"applicationCategory": "FinanceApplication",
+				"operatingSystem": "All"
+			},
+			{
+				"@context": "https://schema.org",
+				"@type": "WebApplication",
+				"name": "Calculadora de Tiempo de Trabajo",
+				"url": "https://worthmytimecalculator.com/es/",
+				"description": "Convierte cualquier precio en horas de trabajo. Calculadora tiempo de trabajo precio y coste en horas.",
+				"applicationCategory": "FinanceApplication",
+				"operatingSystem": "All"
+			},
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"@id": "#author",
+				"name": "\u00C1ngel Gonz\u00E1lez Palenzuela",
+				"email": "skald@skaldcraft.com",
+				"worksFor": {
+					"@id": "#organization"
+				}
+			},
+			{
+				"@context": "https://schema.org",
+				"@type": "Organization",
+				"@id": "#organization",
+				"name": "Skaldcraft",
+				"url": "https://worthmytimecalculator.com",
+				"contactPoint": {
+					"@type": "ContactPoint",
+					"email": "skald@skaldcraft.com",
+					"contactType": "customer support"
+				}
+			}
+		]
+		</script>
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	</head>
 	<body>
 		<div id="root"></div>
+		<h2 class="seo-heading" style="font-size:1px; height:0; overflow:hidden; opacity:0; margin:0; padding:0;">
+			Convert any price into hours of work with this time price calculator.
+		</h2>
+		<noscript>
+			<div style="padding: 2rem; text-align: center; font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto;">
+				<h1>Worth My Time Calculator</h1>
+				<p>Convert any item into working hours. Only then you'll know if you really want it.</p>
+				<p>Please enable JavaScript to use the calculator.</p>
+			</div>
+		</noscript>
 		<script type="module" src="/src/main.jsx"></script>
 	</body>
 </html>

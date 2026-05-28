@@ -1,7 +1,7 @@
 export const translations = {
   en: {
-    metaTitle: "Worth My Time Calculator - Is it worth it?",
-    metaDescription: "Convert any item into working hours. Only then you'll know if you really want it.",
+    metaTitle: "Work Time Cost Calculator – Convert Price Into Hours of Work",
+    metaDescription: "Simple calculator to convert any price into hours of work. Time price calculator and work time cost converter.",
     title: "Worth My Time Calculator",
     subtitle1: "Convert any item into working hours.",
     subtitle2: "Only then you'll know if you really want it.",
@@ -28,11 +28,13 @@ export const translations = {
     cookiePolicy: "Cookie Policy",
     backToHome: "Back to home",
     copyright: "© 2026 Skaldcraft",
-    currency: "$"
+    currency: "$",
+    lastUpdatedLabel: "Last updated:",
+    seoH2: "Convert any price into hours of work with this time price calculator."
   },
   es: {
-    metaTitle: "Worth My Time Calculator - ¿Merece la pena?",
-    metaDescription: "Convierte cualquier artículo en horas de trabajo. Solo así sabrás si realmente lo quieres.",
+    metaTitle: "Calculadora de Tiempo de Trabajo – ¿Cuántas horas cuesta X?",
+    metaDescription: "Convierte cualquier precio en horas de trabajo. Calculadora tiempo de trabajo precio y coste en horas.",
     title: "¿Merece la pena?",
     subtitle1: "Convierte cualquier artículo en horas de trabajo.",
     subtitle2: "Solo así sabrás si realmente lo quieres.",
@@ -59,6 +61,8 @@ export const translations = {
     cookiePolicy: "Política de cookies",
     backToHome: "Volver al inicio",
     copyright: "© 2026 Skaldcraft",
-    currency: "€"
+    currency: "€",
+    lastUpdatedLabel: "Última actualización:",
+    seoH2: "Calculadora para convertir cualquier precio en horas de trabajo."
   }
 };
