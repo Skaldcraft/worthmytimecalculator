@@ -8,8 +8,6 @@ import BannerSection from '@/components/BannerSection.jsx';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { translations } from '@/lib/translations.js';
 
-const LAST_UPDATED = '2026-05-13';
-
 const HomePage = () => {
   const { language } = useLanguage();
   const t = translations[language];
@@ -54,9 +52,6 @@ const HomePage = () => {
                 <p>{t.subtitle1}</p>
                 <p>{t.subtitle2}</p>
               </div>
-              <p className="text-xs text-muted-foreground/60 mt-4">
-                {t.lastUpdatedLabel} {LAST_UPDATED}
-              </p>
               <h2 className="seo-heading" style={{ fontSize: '1px', height: 0, overflow: 'hidden', opacity: 0, margin: 0, padding: 0 }}>
                 {t.seoH2}
               </h2>

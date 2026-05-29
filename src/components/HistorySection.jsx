@@ -4,13 +4,14 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { History, Trash2 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext.jsx';
+import { useCurrency } from '@/context/CurrencyContext.jsx';
 
 const HistorySection = ({ latestCalculation }) => {
   const { language } = useLanguage();
+  const { symbol } = useCurrency();
   const [history, setHistory] = useState([]);
 
   const storageKey = `calculatorHistory_${language}`;
-  const currencySymbol = language === 'es' ? '€' : '£';
   const titleText = language === 'es' ? 'Historial reciente' : 'Recent History';
   const clearText = language === 'es' ? 'Limpiar' : 'Clear';
   const itemPrefix = language === 'es' ? 'Artículo de' : 'Item of';
@@ -91,7 +92,7 @@ const HistorySection = ({ latestCalculation }) => {
               >
                 <div className="flex-1">
                   <p className="text-sm font-medium text-muted-foreground">
-                    {itemPrefix} {currencySymbol}{item.price.toFixed(2)}
+                    {itemPrefix} {symbol}{item.price.toFixed(2)}
                   </p>
                 </div>
                 <div className="text-right">

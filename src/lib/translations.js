@@ -28,8 +28,6 @@ export const translations = {
     cookiePolicy: "Cookie Policy",
     backToHome: "Back to home",
     copyright: "© 2026 Skaldcraft",
-    currency: "$",
-    lastUpdatedLabel: "Last updated:",
     seoH2: "Convert any price into hours of work with this time price calculator."
   },
   es: {
@@ -61,8 +59,6 @@ export const translations = {
     cookiePolicy: "Política de cookies",
     backToHome: "Volver al inicio",
     copyright: "© 2026 Skaldcraft",
-    currency: "€",
-    lastUpdatedLabel: "Última actualización:",
     seoH2: "Calculadora para convertir cualquier precio en horas de trabajo."
   }
 };

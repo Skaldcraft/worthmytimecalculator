@@ -2,6 +2,7 @@ import React from 'react';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { Button } from '@/components/ui/button';
 import { Globe } from 'lucide-react';
+import CurrencySelector from '@/components/CurrencySelector.jsx';
 
 const Header = () => {
   const { language, setLanguage } = useLanguage();
@@ -18,16 +19,19 @@ const Header = () => {
             Worth My Time Calculator
           </h1>
           
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={toggleLanguage}
-            className="flex items-center gap-2 font-medium hover:bg-muted text-muted-foreground hover:text-foreground transition-all duration-200"
-            aria-label="Toggle language"
-          >
-            <Globe className="w-4 h-4" />
-            <span>{language === 'en' ? 'Español' : 'English'}</span>
-          </Button>
+          <div className="flex items-center gap-3">
+            <CurrencySelector />
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleLanguage}
+              className="flex items-center gap-2 font-medium hover:bg-muted text-muted-foreground hover:text-foreground transition-all duration-200"
+              aria-label="Toggle language"
+            >
+              <Globe className="w-4 h-4" />
+              <span>{language === 'en' ? 'Español' : 'English'}</span>
+            </Button>
+          </div>
         </div>
       </div>
     </header>

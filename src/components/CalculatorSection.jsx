@@ -6,10 +6,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Clock, Calendar, Briefcase } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/context/LanguageContext.jsx';
+import { useCurrency } from '@/context/CurrencyContext.jsx';
 import { translations } from '@/lib/translations.js';
 
 const CalculatorSection = ({ onCalculation, onClearHistory }) => {
   const { language } = useLanguage();
+  const { symbol } = useCurrency();
   const t = translations[language];
 
   const [price, setPrice] = useState('');
@@ -144,7 +146,7 @@ const CalculatorSection = ({ onCalculation, onClearHistory }) => {
                 {t.priceLabel}
               </Label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">{t.currency}</span>
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">{symbol}</span>
                 <Input
                   id="price"
                   type="number"
@@ -194,7 +196,7 @@ const CalculatorSection = ({ onCalculation, onClearHistory }) => {
                   {incomeType === 'monthly' ? t.monthlyIncome : t.hourlyIncome}
                 </Label>
                 <div className="relative">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">{t.currency}</span>
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">{symbol}</span>
                   <Input
                     id="income"
                     type="number"
@@ -284,7 +286,7 @@ const CalculatorSection = ({ onCalculation, onClearHistory }) => {
                           style={{ letterSpacing: '-0.02em', fontVariantNumeric: 'tabular-nums' }}
                         >
                           {estimatedCost.toFixed(2)}{' '}
-                          <span className="text-xl text-muted-foreground font-medium">{t.currency}</span>
+                          <span className="text-xl text-muted-foreground font-medium">{symbol}</span>
                         </p>
                       </div>
                       

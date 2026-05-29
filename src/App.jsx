@@ -11,9 +11,11 @@ import CookiePolicyEnPage from './pages/CookiePolicyEnPage.jsx';
 import LanguageRedirect from './components/LanguageRedirect.jsx';
 import { Toaster } from '@/components/ui/sonner';
 import { LanguageProvider } from '@/context/LanguageContext.jsx';
+import { CurrencyProvider } from '@/context/CurrencyContext.jsx';
 
 function App() {
   return (
+    <CurrencyProvider>
     <LanguageProvider>
       <Router>
         <ScrollToTop />
@@ -45,6 +47,7 @@ function App() {
         <Toaster />
       </Router>
     </LanguageProvider>
+    </CurrencyProvider>
   );
 }
 
