@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { History, Trash2 } from 'lucide-react';
@@ -79,31 +78,26 @@ const HistorySection = ({ latestCalculation }) => {
         </div>
       </CardHeader>
       <CardContent>
-        <AnimatePresence mode="popLayout">
-          <div className="space-y-3">
-            {history.map((item, index) => (
-              <motion.div
-                key={item.timestamp}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.2, delay: index * 0.05 }}
-                className="flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted transition-all duration-200"
-              >
-                <div className="flex-1">
-                  <p className="text-sm font-medium text-muted-foreground">
-                    {itemPrefix} {symbol}{item.price.toFixed(2)}
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className="text-lg font-bold text-foreground" style={{ fontVariantNumeric: 'tabular-nums' }}>
-                    {item.days.toFixed(1)} {daysText}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </AnimatePresence>
+        <div className="space-y-3">
+          {history.map((item, index) => (
+            <div
+              key={item.timestamp}
+              className="flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted transition-all duration-200 animate-fade-slide-up"
+              style={{ animationDelay: `${index * 0.05}s`, animationFillMode: 'backwards' }}
+            >
+              <div className="flex-1">
+                <p className="text-sm font-medium text-muted-foreground">
+                  {itemPrefix} {symbol}{item.price.toFixed(2)}
+                </p>
+              </div>
+              <div className="text-right">
+                <p className="text-lg font-bold text-foreground" style={{ fontVariantNumeric: 'tabular-nums' }}>
+                  {item.days.toFixed(1)} {daysText}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </CardContent>
     </Card>
   );

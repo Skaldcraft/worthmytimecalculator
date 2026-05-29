@@ -25,31 +25,6 @@
 		<meta property="twitter:description" content="Simple calculator to convert any price into hours of work. Time price calculator and work time cost converter." />
 		<meta property="twitter:image" content="https://worthmytimecalculator.com/og-image.png" />
 
-		<script>
-			(function() {
-				var path = window.location.pathname;
-				var lang = 'en';
-				var esTitle = 'Calculadora de Tiempo de Trabajo \u2013 \u00BFCu\u00E1ntas horas cuesta X?';
-				var esDesc = 'Convierte cualquier precio en horas de trabajo. Calculadora tiempo de trabajo precio y coste en horas.';
-				if (path.startsWith('/es')) {
-					lang = 'es';
-					document.title = esTitle;
-					document.querySelector('meta[name="description"]')?.setAttribute('content', esDesc);
-					document.querySelector('meta[property="og:title"]')?.setAttribute('content', esTitle);
-					document.querySelector('meta[property="og:description"]')?.setAttribute('content', esDesc);
-					document.querySelector('meta[property="twitter:title"]')?.setAttribute('content', esTitle);
-					document.querySelector('meta[property="twitter:description"]')?.setAttribute('content', esDesc);
-					var h2 = document.querySelector('h2.seo-heading');
-					if (h2) h2.textContent = 'Calculadora para convertir cualquier precio en horas de trabajo.';
-				} else if (path.startsWith('/en') || path === '/') {
-					lang = 'en';
-					var h2 = document.querySelector('h2.seo-heading');
-					if (h2) h2.textContent = 'Convert any price into hours of work with this time price calculator.';
-				}
-				document.documentElement.lang = lang;
-			})();
-		</script>
-
 		<script type="application/ld+json">
 		[
 			{
@@ -95,8 +70,6 @@
 		]
 		</script>
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	</head>
 	<body>
 		<div id="root"></div>
@@ -110,6 +83,30 @@
 				<p>Please enable JavaScript to use the calculator.</p>
 			</div>
 		</noscript>
+		<script>
+			(function() {
+				var path = window.location.pathname;
+				var lang = 'en';
+				var esTitle = 'Calculadora de Tiempo de Trabajo \u2013 \u00BFCu\u00E1ntas horas cuesta X?';
+				var esDesc = 'Convierte cualquier precio en horas de trabajo. Calculadora tiempo de trabajo precio y coste en horas.';
+				if (path.startsWith('/es')) {
+					lang = 'es';
+					document.title = esTitle;
+					document.querySelector('meta[name="description"]')?.setAttribute('content', esDesc);
+					document.querySelector('meta[property="og:title"]')?.setAttribute('content', esTitle);
+					document.querySelector('meta[property="og:description"]')?.setAttribute('content', esDesc);
+					document.querySelector('meta[property="twitter:title"]')?.setAttribute('content', esTitle);
+					document.querySelector('meta[property="twitter:description"]')?.setAttribute('content', esDesc);
+					var h2 = document.querySelector('h2.seo-heading');
+					if (h2) h2.textContent = 'Calculadora para convertir cualquier precio en horas de trabajo.';
+				} else if (path.startsWith('/en') || path === '/') {
+					lang = 'en';
+					var h2 = document.querySelector('h2.seo-heading');
+					if (h2) h2.textContent = 'Convert any price into hours of work with this time price calculator.';
+				}
+				document.documentElement.lang = lang;
+			})();
+		</script>
 		<script type="module" src="/src/main.jsx"></script>
 	</body>
 </html>

@@ -46,7 +46,7 @@ const BannerItem = ({ banner }) => {
         loop
         muted
         playsInline
-        preload="auto"
+        preload="none"
         className="w-full h-auto"
         aria-label={banner.alt}
       />

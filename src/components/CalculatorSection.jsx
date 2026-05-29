@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent } from '@/components/ui/card';
@@ -268,115 +267,93 @@ const CalculatorSection = ({ onCalculation, onClearHistory }) => {
               </div>
 
               <div className="mt-auto pt-6">
-                <AnimatePresence mode="wait">
-                  {estimatedCost !== null ? (
-                    <motion.div
-                      key="result"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      className="p-4 bg-secondary/50 rounded-xl border border-border flex flex-col gap-3"
-                    >
-                      <div>
-                        <p className="text-sm font-medium text-muted-foreground mb-1">
-                          {costType === 'monthly' ? t.estimatedMonthlyCost : t.estimatedYearlyCost}
+                {estimatedCost !== null ? (
+                  <div className="p-4 bg-secondary/50 rounded-xl border border-border flex flex-col gap-3 animate-fade-slide-up">
+                    <div>
+                      <p className="text-sm font-medium text-muted-foreground mb-1">
+                        {costType === 'monthly' ? t.estimatedMonthlyCost : t.estimatedYearlyCost}
+                      </p>
+                      <p
+                        className="text-3xl font-bold text-foreground"
+                        style={{ letterSpacing: '-0.02em', fontVariantNumeric: 'tabular-nums' }}
+                      >
+                        {estimatedCost.toFixed(2)}{' '}
+                        <span className="text-xl text-muted-foreground font-medium">{symbol}</span>
+                      </p>
+                    </div>
+                    
+                    {hoursNeeded !== null && (
+                      <div className="pt-3 border-t border-border/50">
+                        <p className="text-xs font-medium text-muted-foreground mb-1 uppercase tracking-wide">
+                          {t.hours} {costType === 'monthly' ? t.monthly.toLowerCase() : (language === 'es' ? 'por año' : 'per year')}
                         </p>
-                        <p
-                          className="text-3xl font-bold text-foreground"
-                          style={{ letterSpacing: '-0.02em', fontVariantNumeric: 'tabular-nums' }}
-                        >
-                          {estimatedCost.toFixed(2)}{' '}
-                          <span className="text-xl text-muted-foreground font-medium">{symbol}</span>
+                        <p className="text-xl font-semibold text-foreground" style={{ fontVariantNumeric: 'tabular-nums' }}>
+                          {hoursNeeded.toFixed(1)} <span className="text-sm text-muted-foreground font-medium">h</span>
                         </p>
                       </div>
-                      
-                      {hoursNeeded !== null && (
-                        <div className="pt-3 border-t border-border/50">
-                          <p className="text-xs font-medium text-muted-foreground mb-1 uppercase tracking-wide">
-                            {t.hours} {costType === 'monthly' ? t.monthly.toLowerCase() : (language === 'es' ? 'por año' : 'per year')}
-                          </p>
-                          <p className="text-xl font-semibold text-foreground" style={{ fontVariantNumeric: 'tabular-nums' }}>
-                            {hoursNeeded.toFixed(1)} <span className="text-sm text-muted-foreground font-medium">h</span>
-                          </p>
-                        </div>
-                      )}
-                    </motion.div>
-                  ) : (
-                    <motion.div
-                      key="empty"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      className="p-4 border border-dashed border-border rounded-xl flex items-center justify-center text-center min-h-[88px]"
-                    >
-                      <p className="text-sm text-muted-foreground">
-                        {t.emptyCostState}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                    )}
+                  </div>
+                ) : (
+                  <div className="p-4 border border-dashed border-border rounded-xl flex items-center justify-center text-center min-h-[88px] animate-fade-slide-up">
+                    <p className="text-sm text-muted-foreground">
+                      {t.emptyCostState}
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </CardContent>
         </Card>
       </div>
 
-      <AnimatePresence mode="wait">
-        {results && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-4"
-          >
-            <Card className="bg-primary text-primary-foreground border-0 shadow-lg">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <Briefcase className="h-4 w-4 opacity-90" />
-                  <p className="text-xs font-medium opacity-90 uppercase tracking-wide">{t.days}</p>
-                </div>
-                <p
-                  className="text-4xl font-bold"
-                  style={{ letterSpacing: '-0.02em', fontVariantNumeric: 'tabular-nums' }}
-                >
-                  {results.days.toFixed(1)}
-                </p>
-              </CardContent>
-            </Card>
+      {results && (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 animate-fade-slide-up">
+          <Card className="bg-primary text-primary-foreground border-0 shadow-lg">
+            <CardContent className="pt-6">
+              <div className="flex items-center gap-2 mb-3">
+                <Briefcase className="h-4 w-4 opacity-90" />
+                <p className="text-xs font-medium opacity-90 uppercase tracking-wide">{t.days}</p>
+              </div>
+              <p
+                className="text-4xl font-bold"
+                style={{ letterSpacing: '-0.02em', fontVariantNumeric: 'tabular-nums' }}
+              >
+                {results.days.toFixed(1)}
+              </p>
+            </CardContent>
+          </Card>
 
-            <Card className="bg-card border-border shadow-md">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <Clock className="h-4 w-4 text-muted-foreground" />
-                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t.hours}</p>
-                </div>
-                <p
-                  className="text-4xl font-bold text-card-foreground"
-                  style={{ letterSpacing: '-0.02em', fontVariantNumeric: 'tabular-nums' }}
-                >
-                  {results.hours.toFixed(0)}
-                </p>
-              </CardContent>
-            </Card>
+          <Card className="bg-card border-border shadow-md">
+            <CardContent className="pt-6">
+              <div className="flex items-center gap-2 mb-3">
+                <Clock className="h-4 w-4 text-muted-foreground" />
+                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t.hours}</p>
+              </div>
+              <p
+                className="text-4xl font-bold text-card-foreground"
+                style={{ letterSpacing: '-0.02em', fontVariantNumeric: 'tabular-nums' }}
+              >
+                {results.hours.toFixed(0)}
+              </p>
+            </CardContent>
+          </Card>
 
-            <Card className="bg-card border-border shadow-md">
-              <CardContent className="pt-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <Calendar className="h-4 w-4 text-muted-foreground" />
-                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t.weeks}</p>
-                </div>
-                <p
-                  className="text-4xl font-bold text-card-foreground"
-                  style={{ letterSpacing: '-0.02em', fontVariantNumeric: 'tabular-nums' }}
-                >
-                  {results.weeks.toFixed(1)}
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          <Card className="bg-card border-border shadow-md">
+            <CardContent className="pt-6">
+              <div className="flex items-center gap-2 mb-3">
+                <Calendar className="h-4 w-4 text-muted-foreground" />
+                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{t.weeks}</p>
+              </div>
+              <p
+                className="text-4xl font-bold text-card-foreground"
+                style={{ letterSpacing: '-0.02em', fontVariantNumeric: 'tabular-nums' }}
+              >
+                {results.weeks.toFixed(1)}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      )}
     </div>
   );
 };
