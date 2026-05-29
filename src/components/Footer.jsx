@@ -3,9 +3,16 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { translations } from '@/lib/translations.js';
 
+const browserIsSpanish = () =>
+  typeof navigator !== 'undefined' &&
+  (navigator.language || navigator.userLanguage || '').toLowerCase().startsWith('es');
+
 const Footer = () => {
   const { language } = useLanguage();
   const t = translations[language];
+
+  const legalRoute = (enPath, esPath) =>
+    browserIsSpanish() ? esPath : enPath;
 
   return (
     <footer className="border-t border-border mt-8 py-6 bg-muted/30">
@@ -14,19 +21,19 @@ const Footer = () => {
           <p>{t.copyright}</p>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
               <Link 
-                to={language === 'en' ? "/en/legal-notice" : "/es/aviso-legal"} 
+                to={legalRoute("/en/legal-notice", "/es/aviso-legal")} 
                 className="hover:text-foreground transition-colors duration-200"
               >
                 {t.legalNotice}
               </Link>
               <Link 
-                to={language === 'en' ? "/en/privacy-policy" : "/es/politica-privacidad"} 
+                to={legalRoute("/en/privacy-policy", "/es/politica-privacidad")} 
                 className="hover:text-foreground transition-colors duration-200"
               >
                 {t.privacyPolicy}
               </Link>
               <Link 
-                to={language === 'en' ? "/en/cookie-policy" : "/es/politica-cookies"} 
+                to={legalRoute("/en/cookie-policy", "/es/politica-cookies")} 
                 className="hover:text-foreground transition-colors duration-200"
               >
                 {t.cookiePolicy}

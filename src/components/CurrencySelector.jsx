@@ -11,6 +11,11 @@ const currencies = [
   { code: 'COP', symbol: '$', label: 'COP' },
   { code: 'BRL', symbol: 'R$', label: 'BRL' },
   { code: 'PEN', symbol: 'S/', label: 'PEN' },
+  { code: 'RUB', symbol: '\u20BD', label: 'RUB' },
+  { code: 'TRY', symbol: '\u20BA', label: 'TRY' },
+  { code: 'PLN', symbol: 'z\u0142', label: 'PLN' },
+  { code: 'UAH', symbol: '\u20B4', label: 'UAH' },
+  { code: 'RON', symbol: 'lei', label: 'RON' },
 ];
 
 const CurrencySelector = () => {

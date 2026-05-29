@@ -1,47 +1,32 @@
 import React, { createContext, useContext, useState } from 'react';
 
+const SUPPORTED_LANGUAGES = ['de', 'en', 'es', 'fr', 'it', 'pl', 'ro', 'ru', 'tr', 'uk'];
+
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
   const [language, setLanguageState] = useState(() => {
-    // Detect language from URL path first
     if (typeof window !== 'undefined') {
       const path = window.location.pathname;
-      if (path.startsWith('/es')) {
-        return 'es';
-      }
-      if (path.startsWith('/en')) {
-        return 'en';
-      }
+      if (path.startsWith('/es')) return 'es';
+      if (path.startsWith('/en')) return 'en';
     }
 
     try {
-      // Check for persistent user preference
-      const storedPreference = localStorage.getItem('userLanguagePreference');
-      if (storedPreference === 'en' || storedPreference === 'es') {
-        return storedPreference;
-      }
-    } catch (error) {
-      console.warn('Failed to access localStorage for language preference:', error);
-    }
+      const stored = localStorage.getItem('userLanguagePreference');
+      if (stored && SUPPORTED_LANGUAGES.includes(stored)) return stored;
+    } catch {}
 
-    // Auto-detect browser language if no preference is saved
     const browserLang = typeof navigator !== 'undefined' ? (navigator.language || navigator.userLanguage || '') : '';
-    if (browserLang.toLowerCase().startsWith('en')) {
-      return 'en';
-    }
-    
-    // Default to 'es' if neither is detected or if it explicitly starts with 'es'
-    return 'es';
+    const lang = browserLang.toLowerCase().split('-')[0];
+    if (SUPPORTED_LANGUAGES.includes(lang)) return lang;
+
+    return 'en';
   });
 
   const setLanguage = (newLanguage) => {
     setLanguageState(newLanguage);
-    try {
-      localStorage.setItem('userLanguagePreference', newLanguage);
-    } catch (error) {
-      console.warn('Failed to save language preference to localStorage:', error);
-    }
+    try { localStorage.setItem('userLanguagePreference', newLanguage); } catch {}
   };
 
   return (

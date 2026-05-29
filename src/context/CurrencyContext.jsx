@@ -12,6 +12,20 @@ const localeToCurrency = {
   'es-PE': 'PEN',
 };
 
+const langToCurrency = {
+  de: 'EUR',
+  en: 'USD',
+  es: 'EUR',
+  fr: 'EUR',
+  it: 'EUR',
+  pl: 'PLN',
+  ro: 'RON',
+  ru: 'RUB',
+  tr: 'TRY',
+  uk: 'UAH',
+  pt: 'EUR',
+};
+
 const currencySymbols = {
   USD: '$',
   EUR: '\u20AC',
@@ -22,6 +36,11 @@ const currencySymbols = {
   COP: '$',
   BRL: 'R$',
   PEN: 'S/',
+  RUB: '\u20BD',
+  TRY: '\u20BA',
+  PLN: 'z\u0142',
+  UAH: '\u20B4',
+  RON: 'lei',
 };
 
 const CurrencyContext = createContext();
@@ -33,7 +52,8 @@ export const CurrencyProvider = ({ children }) => {
       if (stored && currencySymbols[stored]) return stored;
     } catch {}
     const locale = typeof navigator !== 'undefined' ? (navigator.language || '') : '';
-    return localeToCurrency[locale] || 'USD';
+    const lang = locale.split('-')[0];
+    return localeToCurrency[locale] || langToCurrency[lang] || 'USD';
   });
 
   const setCurrency = (code) => {
