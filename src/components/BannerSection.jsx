@@ -90,11 +90,12 @@ const BannerSection = () => {
 
   useEffect(() => {
     let cancelled = false;
+    const adLang = language === 'es' ? 'es' : 'en';
 
     const load = async () => {
       try {
         setError(false);
-        const res = await fetch(`/ads/${language}.json`);
+        const res = await fetch(`/ads/${adLang}.json`);
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         if (!cancelled) {

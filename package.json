@@ -22,7 +22,8 @@
     "react-router-dom": "^7.13.0",
     "sonner": "^2.0.7",
     "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "vanilla-cookieconsent": "^3.1.0"
   },
   "devDependencies": {
     "@prerenderer/prerenderer": "^1.2.5",

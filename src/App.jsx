@@ -12,6 +12,7 @@ import LanguageRedirect from './components/LanguageRedirect.jsx';
 import { Toaster } from '@/components/ui/sonner';
 import { LanguageProvider } from '@/context/LanguageContext.jsx';
 import { CurrencyProvider } from '@/context/CurrencyContext.jsx';
+import CookieConsentBanner from '@/components/CookieConsent.jsx';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
     <LanguageProvider>
       <Router>
         <ScrollToTop />
+        <CookieConsentBanner />
         <Routes>
           {/* Root route with LanguageRedirect middleware */}
           <Route 

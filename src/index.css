@@ -120,6 +120,44 @@
   }
 }
 
+/* CookieConsent theming — match site design */
+#cc-main {
+  --cc-bg: hsl(0 0% 100%);
+  --cc-primary-color: hsl(220 25% 8%);
+  --cc-secondary-color: hsl(220 15% 35%);
+  --cc-btn-primary-bg: hsl(220 85% 50%);
+  --cc-btn-primary-color: hsl(0 0% 100%);
+  --cc-btn-primary-border-color: hsl(220 85% 50%);
+  --cc-btn-primary-hover-bg: hsl(220 85% 40%);
+  --cc-btn-primary-hover-color: hsl(0 0% 100%);
+  --cc-btn-primary-hover-border-color: hsl(220 85% 40%);
+  --cc-btn-secondary-bg: hsl(215 25% 95%);
+  --cc-btn-secondary-color: hsl(220 25% 8%);
+  --cc-btn-secondary-border-color: hsl(215 25% 95%);
+  --cc-btn-secondary-hover-bg: hsl(220 40% 92%);
+  --cc-btn-secondary-hover-color: hsl(220 25% 8%);
+  --cc-btn-secondary-hover-border-color: hsl(220 40% 92%);
+  --cc-separator-border-color: hsl(220 15% 88%);
+  --cc-toggle-on-bg: hsl(220 85% 50%);
+  --cc-toggle-off-bg: hsl(220 15% 70%);
+  --cc-toggle-on-knob-bg: hsl(0 0% 100%);
+  --cc-toggle-off-knob-bg: hsl(0 0% 100%);
+  --cc-toggle-readonly-bg: hsl(215 25% 92%);
+  --cc-toggle-readonly-knob-bg: hsl(0 0% 100%);
+  --cc-cookie-category-block-bg: hsl(215 25% 97%);
+  --cc-cookie-category-block-border: hsl(220 15% 88%);
+  --cc-cookie-category-block-hover-bg: hsl(220 40% 94%);
+  --cc-cookie-category-expanded-block-bg: transparent;
+  --cc-overlay-bg: hsla(220 25% 8% / 0.5);
+  --cc-webkit-scrollbar-bg: hsl(220 15% 88%);
+  --cc-footer-bg: hsl(215 25% 95%);
+  --cc-footer-color: hsl(220 15% 35%);
+  --cc-footer-border-color: hsl(220 15% 88%);
+  --cc-modal-border-radius: 0.75rem;
+  --cc-btn-border-radius: 0.5rem;
+  --cc-modal-transition-duration: 0.25s;
+}
+
 @keyframes fade-slide-up {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
