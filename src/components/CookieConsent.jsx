@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext.jsx';
 import { run, setLanguage } from 'vanilla-cookieconsent';
-import 'vanilla-cookieconsent/dist/cookieconsent.css';
 
 const LANGUAGES = ['en', 'es', 'de', 'fr', 'it', 'pl', 'ro', 'ru', 'tr', 'uk'];
 
@@ -435,6 +434,12 @@ const CookieConsentBanner = () => {
     const init = async () => {
       if (!initialized.current) {
         initialized.current = true;
+        if (!document.querySelector('link[href*="cookieconsent.css"]')) {
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = 'https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3.1.0/dist/cookieconsent.css';
+          document.head.appendChild(link);
+        }
         try {
           await run(buildConfig(language));
         } catch {

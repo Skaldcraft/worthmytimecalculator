@@ -3,7 +3,6 @@ import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import HomePage from './pages/HomePage.jsx';
 import LanguageRedirect from './components/LanguageRedirect.jsx';
-import { Toaster } from '@/components/ui/sonner';
 import { LanguageProvider } from '@/context/LanguageContext.jsx';
 import { CurrencyProvider } from '@/context/CurrencyContext.jsx';
 import CookieConsentBanner from '@/components/CookieConsent.jsx';
@@ -49,7 +48,6 @@ function App() {
           <Route path="/en/cookie-policy" element={<CookiePolicyEnPage />} />
         </Routes>
         </Suspense>
-        <Toaster />
       </Router>
     </LanguageProvider>
     </CurrencyProvider>
