@@ -38,183 +38,128 @@ const LegalNoticeEnPage = () => {
             </h1>
 
             <div className="space-y-6 text-base leading-relaxed text-muted-foreground">
-              {/* Intro */}
-              <section className="space-y-3">
-                <p>
-                  This space provides the user with all the information regarding the legal
-                  terms and conditions that define the relationship between users and me, as
-                  the person responsible for this website. As a user, it is important that you
-                  are aware of these terms before continuing your navigation.
-                </p>
-                <p>
-                  This website strictly complies with Spanish Organic Law 3/2018 (LOPDGDD) on
-                  the Protection of Personal Data and Guarantee of Digital Rights. It also
-                  complies with Regulation (EU) 2016/679 (GDPR) and Spanish Law 34/2002
-                  (LSSICE) on Services of the Information Society and Electronic Commerce.
-                </p>
-              </section>
+              <p>
+                In compliance with <strong>Spanish Law 34/2002 (LSSI-CE)</strong>,{' '}
+                <strong>GDPR</strong> and Spanish <strong>LOPDGDD</strong>, this Legal
+                Notice governs the use of the website{' '}
+                <strong>worthmytimecalculator.com</strong>.
+              </p>
 
               {/* 1. Owner identification */}
               <section className="space-y-3">
                 <h2 className="text-xl font-semibold text-foreground">
-                  1. Website Owner Identification
+                  1. Owner Identification
                 </h2>
                 <div className="space-y-1">
                   <p>
-                    <span className="font-medium">Name:</span> Ángel González Palenzuela.
+                    <span className="font-medium">Owner name:</span>{' '}
+                    Ángel González Palenzuela.
                   </p>
                   <p>
-                    <span className="font-medium">NIF/Tax ID:</span> 38078911L.
+                    <span className="font-medium">Tax ID (NIF):</span> 38078911L.
                   </p>
                   <p>
-                    <span className="font-medium">Email:</span>{' '}
-                    <a
-                      href="mailto:skald@skaldcraft.com"
-                      className="text-primary underline-offset-2 hover:underline"
-                    >
-                      skald@skaldcraft.com
-                    </a>
-                    .
+                    <span className="font-medium">Registered address:</span>{' '}
+                    Avenida de los telares, 30 - 33401 Avilés, Asturias, Spain.
                   </p>
                   <p>
-                    <span className="font-medium">Registered office:</span>{' '}
-                    Avenida de los Telares, 30 - 33401 Avilés, Asturias, Spain.
+                    <span className="font-medium">Email:</span> skald@skaldcraft.com.
                   </p>
                   <p>
                     <span className="font-medium">Business activity:</span>{' '}
-                    Provision of digital products and services.
+                    Provision of digital tools and services.
                   </p>
                 </div>
               </section>
 
-              {/* 2. User commitments */}
+              {/* 2. Website use and user commitments */}
               <section className="space-y-3">
                 <h2 className="text-xl font-semibold text-foreground">
-                  2. User Commitments and Obligations
+                  2. Website Use and User Commitments
                 </h2>
                 <p>
-                  Access to this website does not imply the start of a commercial relationship
-                  with the owner. The user agrees to use the website, its services, and
-                  contents without contravening current legislation, good faith, and public
-                  order.
-                </p>
-                <p>
-                  Any illegal or harmful use of the website that could cause damage or prevent
-                  its normal operation is prohibited. Regarding the contents, their
-                  reproduction, distribution, or modification is prohibited unless authorized
-                  by me as the legitimate owner.
+                  The user agrees to use the website and its contents without violating
+                  current legislation, good faith, or public order. Any illegal or harmful
+                  use of the site against the owner or third parties is prohibited.
                 </p>
               </section>
 
-              {/* 3. Calculation tool accuracy */}
+              {/* 3. Disclaimer for the calculation tool */}
               <section className="space-y-3">
                 <h2 className="text-xl font-semibold text-foreground">
-                  3. Calculation Tool Accuracy
+                  3. Disclaimer for the Calculation Tool
                 </h2>
                 <p>
-                  This website provides a tool to calculate estimates of working hours needed
-                  to purchase an item based on data entered by the user (price and income).
+                  This website provides a calculator that estimates the cost of products in
+                  working hours based on the user's input.
                 </p>
                 <ul className="list-disc list-inside space-y-1">
-                  <li>Results are purely informative and indicative.</li>
                   <li>
-                    The owner is not responsible for decisions made by the user based on these
-                    calculations.
+                    Results are <strong>purely informative and indicative</strong>.
                   </li>
                   <li>
-                    The user is solely responsible for the truthfulness of the figures entered
-                    into the tool.
+                    The owner is not responsible for any financial or purchasing decisions
+                    made by the user based on these calculations.
+                  </li>
+                  <li>
+                    Absolute accuracy of the figures is not guaranteed, as prices and
+                    external variables are subject to change.
                   </li>
                 </ul>
               </section>
 
-              {/* 4. Security measures */}
+              {/* 4. Amazon Affiliation and Advertising */}
               <section className="space-y-3">
                 <h2 className="text-xl font-semibold text-foreground">
-                  4. Security Measures
+                  4. Amazon Affiliation and Advertising
                 </h2>
                 <p>
-                  Navigation data processed on this site is managed under security protocols
-                  to guarantee confidentiality. Communication between users and the website
-                  uses a secure channel, and data is encrypted thanks to the HTTPS protocol,
-                  ensuring appropriate security for data integrity.
-                </p>
-              </section>
-
-              {/* 5. Exclusion of guarantees */}
-              <section className="space-y-3">
-                <h2 className="text-xl font-semibold text-foreground">
-                  5. Exclusion of Guarantees and Liability
-                </h2>
-                <p>
-                  The owner does not grant any guarantee nor is responsible for damages of any
-                  nature that could be caused by:
+                  <strong>Mandatory disclosure:</strong> As an Amazon Associate, I earn from
+                  qualifying purchases. <strong>Important:</strong> This does not result in
+                  any additional cost to you as a buyer.
                 </p>
                 <ul className="list-disc list-inside space-y-1">
-                  <li>Lack of availability or maintenance of the website.</li>
-                  <li>The existence of malware or harmful programs in the contents.</li>
                   <li>
-                    Illicit, negligent, or fraudulent use of the information contained in this
-                    Legal Notice.
+                    <span className="font-medium">Transparency:</span> Marked or redirecting
+                    links to Amazon are affiliate links. If you purchase something through
+                    them, I receive a commission at no extra cost to you.
+                  </li>
+                  <li>
+                    <span className="font-medium">Responsibility:</span> By clicking, you
+                    become a customer of Amazon. Skaldcraft does not manage orders, shipping,
+                    or returns; any claim must be directed to Amazon directly.
                   </li>
                 </ul>
               </section>
 
-              {/* 6. Conflict resolution platform */}
+              {/* 5. Security Measures */}
               <section className="space-y-3">
                 <h2 className="text-xl font-semibold text-foreground">
-                  6. Conflict Resolution Platform
+                  5. Security Measures
                 </h2>
                 <p>
-                  Users may also access the dispute resolution platform provided by the
-                  European Commission:
-                </p>
-                <p>
-                  <a
-                    href="http://ec.europa.eu/consumers/odr/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary underline-offset-2 hover:underline"
-                  >
-                    http://ec.europa.eu/consumers/odr/
-                  </a>
+                  The site uses an <strong>SSL (HTTPS)</strong> certificate to ensure that
+                  navigation and data (even anonymous data) travel in an encrypted and
+                  secure manner.
                 </p>
               </section>
 
-              {/* 7. Governing law and jurisdiction */}
+              {/* 6. Governing Law and Jurisdiction */}
               <section className="space-y-3">
                 <h2 className="text-xl font-semibold text-foreground">
-                  7. Governing Law and Jurisdiction
+                  6. Governing Law and Jurisdiction
                 </h2>
                 <p>
-                  Generally, the relationship between the owner of this website and the users
-                  of its digital services is subject to Spanish legislation and jurisdiction,
-                  specifically to the courts of Avilés/Asturias, Spain.
+                  These terms are governed by <strong>Spanish law</strong>. Any dispute
+                  shall be submitted to the courts of{' '}
+                  <strong>Avilés/Asturias, Spain</strong>.
                 </p>
               </section>
 
-              {/* 8. Contact */}
-              <section className="space-y-3">
-                <h2 className="text-xl font-semibold text-foreground">
-                  8. Contact
-                </h2>
-                <p>
-                  Should any user have questions regarding this Legal Notice, please contact:
-                </p>
-                <p className="font-medium">
-                  <a
-                    href="mailto:skald@skaldcraft.com"
-                    className="text-primary underline-offset-2 hover:underline"
-                  >
-                    skald@skaldcraft.com
-                  </a>
-                </p>
-              </section>
-
-              {/* Last update */}
+              {/* Last updated */}
               <section className="pt-4 border-t border-border">
                 <p className="text-sm text-muted-foreground">
-                  Last updated: 30/03/2026.
+                  Last updated: July 21, 2026.
                 </p>
               </section>
             </div>
