@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop.jsx';
 import HomePage from './pages/HomePage.jsx';
-import LegalNoticePage from './pages/LegalNoticePage.jsx';
-import PrivacyPolicyPage from './pages/PrivacyPolicyPage.jsx';
-import CookiePolicyPage from './pages/CookiePolicyPage.jsx';
-import LegalNoticeEnPage from './pages/LegalNoticeEnPage.jsx';
-import PrivacyPolicyEnPage from './pages/PrivacyPolicyEnPage.jsx';
-import CookiePolicyEnPage from './pages/CookiePolicyEnPage.jsx';
 import LanguageRedirect from './components/LanguageRedirect.jsx';
 import { Toaster } from '@/components/ui/sonner';
 import { LanguageProvider } from '@/context/LanguageContext.jsx';
 import { CurrencyProvider } from '@/context/CurrencyContext.jsx';
 import CookieConsentBanner from '@/components/CookieConsent.jsx';
+
+const LegalNoticePage = lazy(() => import('./pages/LegalNoticePage.jsx'));
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage.jsx'));
+const CookiePolicyPage = lazy(() => import('./pages/CookiePolicyPage.jsx'));
+const LegalNoticeEnPage = lazy(() => import('./pages/LegalNoticeEnPage.jsx'));
+const PrivacyPolicyEnPage = lazy(() => import('./pages/PrivacyPolicyEnPage.jsx'));
+const CookiePolicyEnPage = lazy(() => import('./pages/CookiePolicyEnPage.jsx'));
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Router>
         <ScrollToTop />
         <CookieConsentBanner />
+        <Suspense fallback={null}>
         <Routes>
           {/* Root route with LanguageRedirect middleware */}
           <Route 
@@ -46,6 +48,7 @@ function App() {
           <Route path="/en/privacy-policy" element={<PrivacyPolicyEnPage />} />
           <Route path="/en/cookie-policy" element={<CookiePolicyEnPage />} />
         </Routes>
+        </Suspense>
         <Toaster />
       </Router>
     </LanguageProvider>
