@@ -389,6 +389,24 @@ const buildConfig = (lang) => ({
       flipButtons: false,
     },
   },
+  onAccept: ({ cookie }) => {
+    const cats = cookie.categories || [];
+    window.gtag('consent', 'update', {
+      analytics_storage: cats.includes('analytics') ? 'granted' : 'denied',
+      ad_storage: cats.includes('marketing') ? 'granted' : 'denied',
+      ad_user_data: cats.includes('marketing') ? 'granted' : 'denied',
+      ad_personalization: cats.includes('marketing') ? 'granted' : 'denied',
+    });
+  },
+  onChange: ({ cookie }) => {
+    const cats = cookie.categories || [];
+    window.gtag('consent', 'update', {
+      analytics_storage: cats.includes('analytics') ? 'granted' : 'denied',
+      ad_storage: cats.includes('marketing') ? 'granted' : 'denied',
+      ad_user_data: cats.includes('marketing') ? 'granted' : 'denied',
+      ad_personalization: cats.includes('marketing') ? 'granted' : 'denied',
+    });
+  },
   categories: {
     necessary: {
       enabled: true,
