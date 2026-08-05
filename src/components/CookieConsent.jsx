@@ -361,6 +361,16 @@ const T = {
   },
 };
 
+const updateConsent = ({ cookie }) => {
+  const cats = cookie.categories || [];
+  window.gtag('consent', 'update', {
+    analytics_storage: cats.includes('analytics') ? 'granted' : 'denied',
+    ad_storage: cats.includes('marketing') ? 'granted' : 'denied',
+    ad_user_data: cats.includes('marketing') ? 'granted' : 'denied',
+    ad_personalization: cats.includes('marketing') ? 'granted' : 'denied',
+  });
+};
+
 const buildConfig = (lang) => ({
   mode: 'opt-in',
   autoShow: true,
@@ -388,24 +398,8 @@ const buildConfig = (lang) => ({
       flipButtons: false,
     },
   },
-  onAccept: ({ cookie }) => {
-    const cats = cookie.categories || [];
-    window.gtag('consent', 'update', {
-      analytics_storage: cats.includes('analytics') ? 'granted' : 'denied',
-      ad_storage: cats.includes('marketing') ? 'granted' : 'denied',
-      ad_user_data: cats.includes('marketing') ? 'granted' : 'denied',
-      ad_personalization: cats.includes('marketing') ? 'granted' : 'denied',
-    });
-  },
-  onChange: ({ cookie }) => {
-    const cats = cookie.categories || [];
-    window.gtag('consent', 'update', {
-      analytics_storage: cats.includes('analytics') ? 'granted' : 'denied',
-      ad_storage: cats.includes('marketing') ? 'granted' : 'denied',
-      ad_user_data: cats.includes('marketing') ? 'granted' : 'denied',
-      ad_personalization: cats.includes('marketing') ? 'granted' : 'denied',
-    });
-  },
+  onConsent: updateConsent,
+  onChange: updateConsent,
   categories: {
     necessary: {
       enabled: true,
