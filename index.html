@@ -9,12 +9,35 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied'
-  });
+	var consentState = {
+		'ad_storage': 'denied',
+		'ad_user_data': 'denied',
+		'ad_personalization': 'denied',
+		'analytics_storage': 'denied'
+	};
+
+	try {
+		var ccCookie = document.cookie
+			.split('; ')
+			.find(function(entry) { return entry.indexOf('cc_cookie=') === 0; });
+
+		if (ccCookie) {
+			var ccValue = decodeURIComponent(ccCookie.slice('cc_cookie='.length));
+			var ccParsed = JSON.parse(ccValue);
+			var categories = Array.isArray(ccParsed && ccParsed.categories) ? ccParsed.categories : [];
+			var analyticsGranted = categories.indexOf('analytics') !== -1;
+			var marketingGranted = categories.indexOf('marketing') !== -1;
+
+			consentState.analytics_storage = analyticsGranted ? 'granted' : 'denied';
+			consentState.ad_storage = marketingGranted ? 'granted' : 'denied';
+			consentState.ad_user_data = marketingGranted ? 'granted' : 'denied';
+			consentState.ad_personalization = marketingGranted ? 'granted' : 'denied';
+		}
+	} catch (e) {
+		// Keep denied defaults when consent cookie is missing or invalid.
+	}
+
+	gtag('consent', 'default', consentState);
 </script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

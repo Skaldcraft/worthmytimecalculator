@@ -362,12 +362,26 @@ const T = {
 };
 
 const updateConsent = ({ cookie }) => {
-  const cats = cookie.categories || [];
-  window.gtag('consent', 'update', {
+  const cats = cookie?.categories || [];
+  const consentUpdate = {
     analytics_storage: cats.includes('analytics') ? 'granted' : 'denied',
     ad_storage: cats.includes('marketing') ? 'granted' : 'denied',
     ad_user_data: cats.includes('marketing') ? 'granted' : 'denied',
     ad_personalization: cats.includes('marketing') ? 'granted' : 'denied',
+  };
+
+  if (typeof window.gtag === 'function') {
+    window.gtag('consent', 'update', consentUpdate);
+  } else {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(['consent', 'update', consentUpdate]);
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'consent_updated',
+    consent_analytics_storage: consentUpdate.analytics_storage,
+    consent_ad_storage: consentUpdate.ad_storage,
   });
 };
 
