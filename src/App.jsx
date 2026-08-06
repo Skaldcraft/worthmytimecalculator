@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop.jsx';
+import AnalyticsPageTracker from './components/AnalyticsPageTracker.jsx';
 import HomePage from './pages/HomePage.jsx';
 import LanguageRedirect from './components/LanguageRedirect.jsx';
 import { LanguageProvider } from '@/context/LanguageContext.jsx';
@@ -20,6 +21,7 @@ function App() {
     <LanguageProvider>
       <Router>
         <ScrollToTop />
+        <AnalyticsPageTracker />
         <CookieConsentBanner />
         <Suspense fallback={null}>
         <Routes>
