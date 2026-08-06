@@ -3,6 +3,9 @@ import fs from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import Prerenderer from '@prerenderer/prerenderer';
 import PuppeteerRenderer from '@prerenderer/renderer-puppeteer';
+import { stripPrerenderedGtmLoader } from './prerender-utils.mjs';
+
+const gtmContainerId = 'GTM-MDQJ9WPB';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -35,7 +38,7 @@ try {
 	for (const route of renderedRoutes) {
 		const outputPath = path.join(distDir, route.route, 'index.html');
 		fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-		fs.writeFileSync(outputPath, route.html, 'utf-8');
+		fs.writeFileSync(outputPath, stripPrerenderedGtmLoader(route.html, gtmContainerId), 'utf-8');
 		console.log(`  ✓ ${route.route}`);
 	}
 	await prerenderer.destroy();
