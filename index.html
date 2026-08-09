@@ -7,42 +7,87 @@
 		<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <!-- Banner de cookies -->
 <script>
-  window.PTU_COOKIES_CONFIG = {
-    "title": "Uso de cookies",
-    "message": "Utilizamos cookies propias y de terceros para el funcionamiento de la web, analizar el tráfico y mostrar publicidad. Puedes aceptar todas, rechazarlas o configurarlas.",
-    "policyUrl": "https://worthmytimecalculator.com/es/politica-cookies",
-    "categories": [
-      {
-        "id": "necessary",
-        "label": "Necesarias",
-        "desc": "Imprescindibles para el funcionamiento de la web. No se pueden desactivar.",
-        "required": true
-      },
-      {
-        "id": "analytics",
-        "label": "Analíticas",
-        "desc": "Nos permiten medir el uso de la web de forma agregada."
-      },
-      {
-        "id": "marketing",
-        "label": "Publicidad",
-        "desc": "Permiten mostrar anuncios relevantes dentro y fuera de la web."
-      },
-      {
-        "id": "preferences",
-        "label": "Preferencias",
-        "desc": "Recuerdan tus ajustes, como el idioma o la región."
-      }
-    ],
-    "position": "bottom",
-    "theme": "light",
-    "primaryColor": "#135bec",
-    "primaryTextColor": "#efeae4",
-    "radius": "12px",
-    "expireDays": 365,
-    "consentVersion": "1",
-    "consentModeV2": true
-  };
+  (function () {
+    var isSpanish = window.location.pathname === '/es' || window.location.pathname.indexOf('/es/') === 0;
+
+    var es = {
+      "title": "Uso de cookies",
+      "message": "Utilizamos cookies propias y de terceros para el funcionamiento de la web, analizar el tráfico y mostrar publicidad. Responsable del tratamiento: Ángel González Palenzuela (Skaldcraft). Puedes aceptar todas, rechazarlas o configurarlas.",
+      "policyUrl": "https://worthmytimecalculator.com/es/politica-cookies",
+      "policyLabel": "Política de cookies",
+      "categories": [
+        {
+          "id": "necessary",
+          "label": "Necesarias",
+          "desc": "Imprescindibles para el funcionamiento de la web. No se pueden desactivar.",
+          "required": true
+        },
+        {
+          "id": "analytics",
+          "label": "Analíticas",
+          "desc": "Nos permiten medir el uso de la web de forma agregada."
+        },
+        {
+          "id": "marketing",
+          "label": "Publicidad",
+          "desc": "Permiten mostrar anuncios relevantes dentro y fuera de la web."
+        },
+        {
+          "id": "preferences",
+          "label": "Preferencias",
+          "desc": "Recuerdan tus ajustes, como el idioma o la región."
+        }
+      ],
+      "position": "bottom",
+      "theme": "light",
+      "primaryColor": "#135bec",
+      "primaryTextColor": "#efeae4",
+      "radius": "12px",
+      "expireDays": 365,
+      "consentVersion": "1",
+      "consentModeV2": true
+    };
+
+    var en = {
+      "title": "We use cookies",
+      "message": "We use first-party and third-party cookies to run the website, analyze traffic, and show advertising. Data controller: Ángel González Palenzuela (Skaldcraft). You can accept all, reject them, or configure them.",
+      "policyUrl": "https://worthmytimecalculator.com/en/cookie-policy",
+      "policyLabel": "Cookie policy",
+      "categories": [
+        {
+          "id": "necessary",
+          "label": "Necessary",
+          "desc": "Essential for the website to work. Cannot be disabled.",
+          "required": true
+        },
+        {
+          "id": "analytics",
+          "label": "Analytics",
+          "desc": "Allow us to measure website usage in aggregate."
+        },
+        {
+          "id": "marketing",
+          "label": "Advertising",
+          "desc": "Allow us to show relevant ads on and off the website."
+        },
+        {
+          "id": "preferences",
+          "label": "Preferences",
+          "desc": "Remember your settings, such as language or region."
+        }
+      ],
+      "position": "bottom",
+      "theme": "light",
+      "primaryColor": "#135bec",
+      "primaryTextColor": "#efeae4",
+      "radius": "12px",
+      "expireDays": 365,
+      "consentVersion": "1",
+      "consentModeV2": true
+    };
+
+    window.PTU_COOKIES_CONFIG = isSpanish ? es : en;
+  })();
 </script>
 <!-- Consent Mode v2 — set defaults before anything loads -->
 <script>

@@ -90,8 +90,9 @@ const CookiePolicyEnPage = () => {
                   3. What types of cookies does this website use?
                 </h2>
                 <p>
-                  This website uses first-party and third-party cookies to improve the user
-                  experience and manage advertising spaces.
+                  This website installs first-party and third-party cookies only after
+                  obtaining your consent, except for strictly necessary ones. Each category is
+                  installed according to what you choose in the cookie settings panel.
                 </p>
 
                 {/* A. Technical */}
@@ -100,9 +101,12 @@ const CookiePolicyEnPage = () => {
                     A. Technical Cookies (Strictly Necessary)
                   </h3>
                   <p>
-                    These are the most basic cookies and allow the website to function
-                    correctly, such as knowing when a human or an automated application is
-                    browsing. These cookies do not require consent.
+                    They do not require consent. This website currently does not install
+                    technical storage cookies, since the tool works without cookies. Your
+                    consent record is stored in your browser's local storage (localStorage)
+                    under the key{' '}
+                    <code className="text-foreground">ptu_cookie_consent</code>, with date and
+                    version, and it is not sent to any server.
                   </p>
                 </div>
 
@@ -112,19 +116,41 @@ const CookiePolicyEnPage = () => {
                     B. Analysis Cookies (Third-party)
                   </h3>
                   <p>
-                    These cookies collect information about the type of navigation being
-                    performed, the sections used most, or the language.
+                    They are installed only if you accept the “Analytics” category. They are
+                    used to measure in an aggregated way how the website is used and to improve
+                    it, through Google Analytics:
                   </p>
                   <ul className="list-disc list-inside space-y-1">
                     <li>
-                      <span className="font-medium">Tool:</span> e.g., Google Analytics or
-                      Cloudflare.
+                      <code className="text-foreground">_ga</code> — 2 years — distinguishes
+                      users.
                     </li>
                     <li>
-                      <span className="font-medium">Purpose:</span> anonymous statistical
-                      analysis of visits.
+                      <code className="text-foreground">_ga_&lt;ID&gt;</code> — 2 years —
+                      persists the session state.
+                    </li>
+                    <li>
+                      <code className="text-foreground">_gid</code> — 24 hours — distinguishes
+                      users.
+                    </li>
+                    <li>
+                      <span className="font-medium">Third-party controller:</span> Google LLC /
+                      Google Ireland Limited (
+                      <a
+                        href="https://policies.google.com/technologies/cookies?hl=en"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary underline-offset-2 hover:underline"
+                      >
+                        Google's cookie policy
+                      </a>
+                      ).
                     </li>
                   </ul>
+                  <p>
+                    The indicated duration is approximate and may vary depending on the service
+                    configuration.
+                  </p>
                 </div>
 
                 {/* C. Advertising */}
@@ -133,28 +159,69 @@ const CookiePolicyEnPage = () => {
                     C. Advertising and Behavioral Advertising Cookies (Third-party)
                   </h3>
                   <p>
-                    These cookies allow for effective management of advertising spaces and
-                    analyze your browsing habits to show advertising related to your
-                    preference profile.
+                    They are installed only if you accept the “Advertising” category. They
+                    allow managing advertising spaces, measuring ad performance, and playing
+                    embedded videos (YouTube and Vimeo):
                   </p>
                   <ul className="list-disc list-inside space-y-1">
                     <li>
-                      <span className="font-medium">Purpose:</span> to show relevant and
-                      useful ads without revealing your identity directly to advertisers.
+                      <code className="text-foreground">_gcl_au</code> and{' '}
+                      <code className="text-foreground">_gcl_*</code> (Google Ads) — 90 days —
+                      conversions and click tracking on ads.
                     </li>
                     <li>
-                      <span className="font-medium">Platform used:</span> Google Ads (see its{' '}
+                      <code className="text-foreground">CONSENT</code>,{' '}
+                      <code className="text-foreground">VISITOR_INFO1_LIVE</code>,{' '}
+                      <code className="text-foreground">YSC</code> and{' '}
+                      <code className="text-foreground">PREF</code> (YouTube) — variable
+                      duration (from session to 2 years) — player preferences, language, and
+                      security.
+                    </li>
+                    <li>
+                      <code className="text-foreground">vuid</code> and{' '}
+                      <code className="text-foreground">player</code> (Vimeo) — 1 to 2 years —
+                      player preferences and playback analytics.
+                    </li>
+                    <li>
+                      <span className="font-medium">Third-party controllers:</span> Google LLC /
+                      Google Ireland Limited (
                       <a
                         href="https://policies.google.com/technologies/ads?hl=en"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary underline-offset-2 hover:underline"
                       >
-                        Cookie Policy
+                        Google Ads policy
+                      </a>
+                      ) and Vimeo, Inc. (
+                      <a
+                        href="https://vimeo.com/cookie_policy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary underline-offset-2 hover:underline"
+                      >
+                        Vimeo's cookie policy
                       </a>
                       ).
                     </li>
                   </ul>
+                  <p>
+                    Note: the Google Tag Manager container does not install cookies by itself;
+                    it runs the configured tags (Google analytics and advertising) according to
+                    the consent granted.
+                  </p>
+                </div>
+
+                {/* D. Preferences */}
+                <div className="space-y-2">
+                  <h3 className="text-lg font-semibold text-foreground">
+                    D. Preference Cookies
+                  </h3>
+                  <p>
+                    They would be installed only if you accept the “Preferences” category. This
+                    website currently does not install preference cookies; the category is
+                    available for future settings such as language or region.
+                  </p>
                 </div>
               </section>
 
@@ -164,9 +231,10 @@ const CookiePolicyEnPage = () => {
                   4. Can cookies be deleted?
                 </h2>
                 <p>
-                  Yes. You can block or delete cookies generally or specifically for a domain
-                  from your browser settings. In the following links you can find how to
-                  manage cookies in the most commonly used browsers:
+                  You can change or withdraw your consent at any time through the “Cookie
+                  settings” link in the footer. You can also block or delete cookies generally
+                  or specifically for a domain from your browser settings. In the following
+                  links you can find how to manage cookies in the most commonly used browsers:
                 </p>
                 <ul className="list-disc list-inside space-y-1">
                   <li>
@@ -223,7 +291,7 @@ const CookiePolicyEnPage = () => {
               {/* Last update */}
               <section className="pt-4 border-t border-border">
                 <p className="text-sm text-muted-foreground">
-                  Last updated: 30/03/2026.
+                  Last updated: 09/08/2026.
                 </p>
               </section>
             </div>
