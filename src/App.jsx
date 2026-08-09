@@ -6,7 +6,6 @@ import HomePage from './pages/HomePage.jsx';
 import LanguageRedirect from './components/LanguageRedirect.jsx';
 import { LanguageProvider } from '@/context/LanguageContext.jsx';
 import { CurrencyProvider } from '@/context/CurrencyContext.jsx';
-import CookieConsentBanner from '@/components/CookieConsent.jsx';
 
 const LegalNoticePage = lazy(() => import('./pages/LegalNoticePage.jsx'));
 const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage.jsx'));
@@ -22,7 +21,6 @@ function App() {
       <Router>
         <ScrollToTop />
         <AnalyticsPageTracker />
-        <CookieConsentBanner />
         <Suspense fallback={null}>
         <Routes>
           {/* Root route with LanguageRedirect middleware */}

@@ -38,6 +38,13 @@ const Footer = () => {
               >
                 {legalT.cookiePolicy}
               </Link>
+              <button
+                type="button"
+                data-ptu-cookies-open
+                className="hover:text-foreground transition-colors duration-200 cursor-pointer"
+              >
+                {isSpanish ? 'Configurar cookies' : 'Cookie settings'}
+              </button>
           </div>
         </div>
       </div>

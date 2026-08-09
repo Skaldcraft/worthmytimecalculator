@@ -24,10 +24,17 @@ const BannerItem = ({ banner }) => {
         ? `https://www.youtube.com/embed/${youtubeId}?rel=0`
         : `https://player.vimeo.com/video/${vimeoId}`;
 
+      const marketingGranted =
+        typeof window !== 'undefined' &&
+        typeof window.PTUCookies?.has === 'function' &&
+        window.PTUCookies.has('marketing');
+
       return (
         <div className={`${base} aspect-video`}>
           <iframe
-            src={src}
+            src={marketingGranted ? src : undefined}
+            data-ptu-category="marketing"
+            data-ptu-src={src}
             title={banner.alt}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
