@@ -62,6 +62,52 @@ const HomePage = () => {
 
             <BannerSection />
 
+            <div className="w-full flex justify-center my-8">
+              <div className="w-full max-w-3xl rounded-2xl border border-border/80 bg-card/90 p-6 sm:p-8 text-center shadow-sm">
+                <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground/80 sm:text-xs">
+                  {language === 'es' ? 'TAMBIÉN DE SKALDCRAFT' : 'ALSO FROM SKALDCRAFT'}
+                </p>
+
+                <h3 className="text-xl font-bold text-foreground sm:text-2xl">WorkWorth</h3>
+
+                <p className="mt-3 text-base font-medium text-foreground sm:text-lg">
+                  {language === 'es'
+                    ? 'Identifica lo que suma. Reduce lo que te consume.'
+                    : 'Identify what adds value. Cut what drains you.'}
+                </p>
+
+                <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  {language === 'es'
+                    ? 'Calcula tu tarifa real por hora, tu beneficio neto y a dónde se van tu tiempo y tu dinero en cada periodo de trabajo.'
+                    : 'Calculate your real hourly rate, your net profit, and where your time and money go in each work period.'}
+                </p>
+
+                <p className="mt-5 text-sm sm:text-base">
+                  <a
+                    href="https://workworth.skaldcraft.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-primary underline-offset-4 hover:underline"
+                  >
+                    {language === 'es' ? 'Visitar WorkWorth' : 'Visit WorkWorth'}
+                  </a>
+                  <span className="ml-2 text-muted-foreground">https://workworth.skaldcraft.com/</span>
+                </p>
+
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  {language === 'es'
+                    ? 'WorkWorth funciona por completo en tu propio dispositivo: sin cuenta, sin contraseña y sin nube.'
+                    : 'WorkWorth works entirely on your own device: no account, no password, and no cloud.'}
+                </p>
+
+                <p className="mt-3 text-xs text-muted-foreground sm:text-sm">
+                  {language === 'es'
+                    ? 'En español para la versión en español y en inglés para las demás versiones.'
+                    : 'In Spanish for the Spanish version and in English for all other versions.'}
+                </p>
+              </div>
+            </div>
+
             <HistorySection latestCalculation={latestCalculation} />
           </div>
         </main>
