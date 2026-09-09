@@ -82,28 +82,21 @@ const HomePage = () => {
                     : 'Calculate your real hourly rate, your net profit, and where your time and money go in each work period.'}
                 </p>
 
-                <p className="mt-5 text-sm sm:text-base">
+                <div className="mt-5 flex justify-center">
                   <a
                     href="https://workworth.skaldcraft.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-primary underline-offset-4 hover:underline"
+                    className="inline-flex items-center justify-center rounded-full border border-border bg-background px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-muted/80 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                   >
                     {language === 'es' ? 'Visitar WorkWorth' : 'Visit WorkWorth'}
                   </a>
-                  <span className="ml-2 text-muted-foreground">https://workworth.skaldcraft.com/</span>
-                </p>
+                </div>
 
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
                   {language === 'es'
                     ? 'WorkWorth funciona por completo en tu propio dispositivo: sin cuenta, sin contraseña y sin nube.'
                     : 'WorkWorth works entirely on your own device: no account, no password, and no cloud.'}
-                </p>
-
-                <p className="mt-3 text-xs text-muted-foreground sm:text-sm">
-                  {language === 'es'
-                    ? 'En español para la versión en español y en inglés para las demás versiones.'
-                    : 'In Spanish for the Spanish version and in English for all other versions.'}
                 </p>
               </div>
             </div>
